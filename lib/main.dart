@@ -1,15 +1,30 @@
+import 'package:crud_flutter/provider/users_provider.dart';
 import 'package:crud_flutter/views/user_list.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Crud Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => UsersProvider(),
+        )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Crud Flutter',
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: UserList(),
       ),
-      home: UserList(),
-    ),
-  );
+    );
+  }
 }
