@@ -1,6 +1,3 @@
-import 'dart:math';
-
-import 'package:crud_flutter/models/user.dart';
 import 'package:crud_flutter/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:crud_flutter/components/user_tile.dart';
@@ -44,9 +41,14 @@ class UserList extends StatelessWidget {
           )
         ],
       ),
-      body: ListView.builder(
-        itemCount: users.count,
-        itemBuilder: (ctx, i) => UserTile(users.byIndex(i)),
+      body: Padding(
+        padding: const EdgeInsets.only(
+          top: 8,
+        ),
+        child: ListView.builder(
+          itemCount: users.count,
+          itemBuilder: (ctx, i) => UserTile(users.byIndex(i)),
+        ),
       ),
     );
   }

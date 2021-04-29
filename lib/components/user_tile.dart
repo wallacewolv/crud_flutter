@@ -1,6 +1,7 @@
 import 'package:crud_flutter/models/user.dart';
 import 'package:crud_flutter/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class UserTile extends StatelessWidget {
   final User user;
@@ -19,15 +20,16 @@ class UserTile extends StatelessWidget {
       leading: avatar,
       title: Text(
         user.name,
-        style: TextStyle(
-          color: Colors.indigo,
-          fontSize: 18,
+        style: GoogleFonts.architectsDaughter(
+          fontSize: 22,
           fontWeight: FontWeight.bold,
+          color: Colors.indigo,
         ),
       ),
       subtitle: Text(
         user.email,
-        style: TextStyle(
+        style: GoogleFonts.abel(
+          fontSize: 17,
           fontWeight: FontWeight.bold,
         ),
       ),
