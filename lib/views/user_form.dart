@@ -1,15 +1,32 @@
+import 'package:flutter/material.dart';
 import 'package:crud_flutter/models/user.dart';
 import 'package:crud_flutter/provider/users_provider.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class UserForm extends StatelessWidget {
+class UserForm extends StatefulWidget {
+  @override
+  _UserFormState createState() => _UserFormState();
+}
+
+class _UserFormState extends State<UserForm> {
   final _form = GlobalKey<FormState>();
+
   final Map<String, String> _formData = {};
+
+  void _loadFormData(User user) {
+    _formData['id'] = user.id;
+    _formData['name'] = user.name;
+    _formData['email'] = user.email;
+    _formData['avatarUrl'] = user.avatarUrl;
+  }
 
   @override
   Widget build(BuildContext context) {
+    // final User user = ModalRoute.of(context).settings.arguments;
+    final User user = ModalRoute.of(context)!.settings.arguments as User;
+
+    _loadFormData(user);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -50,6 +67,7 @@ class UserForm extends StatelessWidget {
           child: Column(
             children: [
               TextFormField(
+                initialValue: _formData['name'],
                 decoration: InputDecoration(
                   labelText: "Nome",
                   labelStyle: GoogleFonts.architectsDaughter(
@@ -69,6 +87,7 @@ class UserForm extends StatelessWidget {
                 onSaved: (value) => _formData['name'] = value.toString(),
               ),
               TextFormField(
+                initialValue: _formData['email'],
                 decoration: InputDecoration(
                   labelText: "E-mail",
                   labelStyle: GoogleFonts.architectsDaughter(
@@ -88,6 +107,7 @@ class UserForm extends StatelessWidget {
                 onSaved: (value) => _formData['email'] = value.toString(),
               ),
               TextFormField(
+                initialValue: _formData['avatarUrl'],
                 decoration: InputDecoration(
                   labelText: "URL do Avatar",
                   labelStyle: GoogleFonts.architectsDaughter(
