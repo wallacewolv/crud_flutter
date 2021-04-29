@@ -1,9 +1,11 @@
 import 'dart:math';
 
 import 'package:crud_flutter/models/user.dart';
+import 'package:crud_flutter/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:crud_flutter/components/user_tile.dart';
 import 'package:crud_flutter/provider/users_provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class UserList extends StatelessWidget {
@@ -18,8 +20,10 @@ class UserList extends StatelessWidget {
           width: double.maxFinite,
           child: Text(
             "Lista de Usuários",
-            style: TextStyle(
+            style: GoogleFonts.architectsDaughter(
+              fontSize: 24,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
         ),
@@ -31,7 +35,11 @@ class UserList extends StatelessWidget {
                 Icons.add_circle_outline,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(
+                  AppRoutes.USER_FORM,
+                );
+              },
             ),
           )
         ],
