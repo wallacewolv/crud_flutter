@@ -1,7 +1,9 @@
 import 'package:crud_flutter/models/user.dart';
+import 'package:crud_flutter/provider/users_provider.dart';
 import 'package:crud_flutter/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class UserTile extends StatelessWidget {
   final User user;
@@ -11,7 +13,10 @@ class UserTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final avatar = user.avatarUrl == null || user.avatarUrl.isEmpty
         ? CircleAvatar(
-            child: Icon(Icons.person),
+            child: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
           )
         : CircleAvatar(
             backgroundImage: NetworkImage(user.avatarUrl),
@@ -50,7 +55,31 @@ class UserTile extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.delete),
               color: Colors.red,
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    title: Text("Excluir Usuário"),
+                    content: Text("Gostaria de excluir ${user.name} ?"),
+                    actions: [
+                      FlatButton(
+                        child: Text("Não"),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                      FlatButton(
+                        child: Text("Sim"),
+                        onPressed: () {
+                          Provider.of<UsersProvider>(context, listen: false)
+                              .remove(user);
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              },
             ),
           ],
         ),

@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 child: Text(
                   "FLUTTER CRUD",
                   style: GoogleFonts.architectsDaughter(
-                    fontSize: 24,
+                    fontSize: 27,
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF1766A7),
                   ),
