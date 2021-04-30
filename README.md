@@ -18,7 +18,7 @@
 
 ## :dart: About ##
 
-Application developed with Flutter 2.0 from plataforms Android and IOS.
+Application developed with Flutter 2.0 from plataforms Android and IOS focused on good practice of context and controllers within Flutter, together with CRUD functions
 
 ## :sparkles: Features ##
 
