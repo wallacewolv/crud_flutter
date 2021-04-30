@@ -1,8 +1,8 @@
 <h1 align="center">Crud Flutter</h1>
 
-<!-- <h1 align="center"> 
-  <img height="320" src="./assets/images/calculator_flutter.gif" alt="Calculator_flutter" />
-</h1> -->
+ <h1 align="center"> 
+  <img height="320" src="./assets/crud_flutter.gif" alt="crud_flutter" />
+</h1>
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -20,9 +20,15 @@
 
 Application developed with Flutter 2.0 from plataforms Android and IOS.
 
-## :sparkles: Features (Initials) ##
+## :sparkles: Features ##
 
-:heavy_check_mark: In construction...
+:heavy_check_mark: Splash Screen (Initial screen from animation with Lottie)\
+:heavy_check_mark: User List (Home screen with user information)\
+:heavy_check_mark: User Form (Screen for editing or inserting a user)\
+:heavy_check_mark: Create (Create a new user)\
+:heavy_check_mark: Read (Reading the Json file to convert user information on the screen, including name, email and avatar URL)\
+:heavy_check_mark: Update (Update user information)\
+:heavy_check_mark: Delete (Remove the selected user from the list)
 
 ## :rocket: Technologies ##
 
@@ -30,6 +36,13 @@ The following tools were used in this project:
 
 - [Flutter 2.0](https://events.flutter.dev/)
 - [Power Shell 5.0](https://docs.microsoft.com/pt-br/skypeforbusiness/set-up-your-computer-for-windows-powershell/download-and-install-windows-powershell-5-1)
+
+## :white_check_mark: Dependencies ##
+
+The following dependencies were used in this project:
+- [Cupertino Icons](https://pub.dev/packages/cupertino_icons)
+- [Google Fonts](https://pub.dev/packages/google_fonts)
+- [Lottie](https://pub.dev/packages/lottie)
 
 ## :white_check_mark: Requirements ##
 
